@@ -1,0 +1,20 @@
+
+def player(filename):
+# chunk = 1024
+# Open the soaudio/sound file
+af = wave.open(filename, 'rb')
+pa = pyaudio.PyAudio()
+
+stream = pa.open(format = pa.get_format_from_width(af.getsampwidth()),
+                channels = af.getnchannels(),
+                rate = af.getframerate(),
+                output = True)
+# Read data in chunks
+rd_data = af.readframes(CHUNK)
+while rd_data != '':
+    stream.write(rd_data)
+    rd_data = af.readframes(CHUNK)
+# return rd_data
+stream.stop_stream()
+stream.close()
+pa.terminate()
