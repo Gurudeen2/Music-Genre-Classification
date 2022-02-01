@@ -1,0 +1,14 @@
+tensorflow 
+sklearn 
+matplotlib 
+pylab 
+librosa 
+ttkthemes 
+wave 
+pyaudio 
+tkinter 
+numpy 
+pillow 
+scikit_learn 
+pandas
+
